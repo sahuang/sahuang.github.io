@@ -322,6 +322,8 @@ int main(int argc, char *argv[]) {
 }
 ```
 
+[Exploit Code](./exp.c)
+
 This will give the flag `LITCTF{h0n3stly_im_n0t_sur3_1f_rick_r0ll3d_mys3lf}`.
 
 # Conclusion
