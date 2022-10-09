@@ -4,3 +4,7 @@
   link: /writeups/litctf-2022
   items:
     - name: Reverse - You Know The Rules And So Do I
+- name: GDG Algiers CTF 2022
+  link: /writeups/gdg-algiers-ctf-2022
+  items:
+    - name: Misc - MLM
