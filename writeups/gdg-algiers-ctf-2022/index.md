@@ -15,11 +15,11 @@ Challenge description and solve status:
 
 # Forensics Analysis
 
-The challenge is (sadly) about AI, which none of me and my team members have any prior experience with. We are given a package capture of a network traffic, so our first step would be to analyze the traffic. 
+The challenge is (sadly) about AI, which none of me and my team members have any prior experience with. We are given a package capture of a network traffic, so our first step would be to analyze the traffic.
 
-Once opened in Wireshark, we can immediately notice there are a lot of FTP streams. If we follow the TCP stream of any of them, we can see the communication between client and server:
+Once opened in `Wireshark`, we immediately noticed there are a lot of FTP streams. If we follow the TCP stream of any of them, we can see the communication between client and server:
 
-```
+```text
 220---------- Welcome to Pure-FTPd [privsep] [TLS] ----------
 220-You are user number 1 of 5 allowed.
 220-Local time is now 10:18. Server port: 21.
@@ -90,6 +90,7 @@ Now I have been stuck here for a few hours (there was no hint when I reached her
 Playing around in CyberChef, I did not get anything even printable. I guess it won't be so easy, otherwise where'd the `AI` tag came from? At this stage, I tried to talk to admin and they gave hints afterwards.
 
 > For people looking to know which model it is, take these pieces of information into consideration:
+>
 > - do you know what MLM stands for in ai?
 > - the username is your way to the model
 > - default config is being used
@@ -112,8 +113,11 @@ Still, there are a number of issues to resolve:
 That's the end of day 1 so I went to sleep. During the 6 hours, my teammate made some progress and we figured out that, indeed `BERT` does have only 12 layers, but if we take a look at each layer we'll find that each one consists of query, key, value, dropout, etc. Also there's hint 2 and 3:
 
 > The layers had been flattened before being sent. You need to reshape them.
+>
 > tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+>
 > model = BertForMaskedLM(config=BertConfig())
+>
 > using model.parameters reshape and update the layers
 
 Let's have a try.
@@ -130,7 +134,7 @@ print(model.parameters)
 
 We get the following:
 
-```
+```text
 <bound method ModuleUtilsMixin.num_parameters of BertModel(
   (embeddings): BertEmbeddings(
     (word_embeddings): Embedding(30522, 768, padding_idx=0)
@@ -141,7 +145,9 @@ We get the following:
 [Truncated]
 ```
 
-The first 2 entries of `pks` have size of `23440896 = 30522 * 768` and `393216 = 512 * 768`. Great! We can exactly match 202 layer arrays with all `BERT` parameters. Now we just need to reshape them and update the weights. Note I did some printing here to validate data shape is correct.
+The first 2 entries of `pks` have size of `23440896 = 30522 * 768` and `393216 = 512 * 768`. 
+
+Great! We can exactly match 202 layer arrays with all `BERT` parameters. Now we just need to reshape them and update the weights. Note I did some printing here to validate data shape is correct.
 
 ```py
 shapes = []
@@ -206,7 +212,7 @@ Hmm, what could go wrong? At this point I was pretty sure our model is correct, 
 
 ![First prediction](./predict0.png)
 
-So we just need to recursively add text to flag until we get the whole flag. Notice that sometimes code will output `##`, we just need to remove them. Here is the full code:
+So we just need to recursively add text to initially empty flag until we get the whole flag. Notice that sometimes code will output `##`, we just need to remove them. Here is the full code:
 
 ```py
 from torch.nn import functional as F
@@ -252,11 +258,13 @@ while not flag.endswith('}'):
 print(flag)
 ```
 
-Output: `cybererudites{l4nguag3_m0d3l5_are_aw3s0me_4nd_s0_is_y0u}`. Finally solved (an hour before CTF ended)!
+Output: `cybererudites{l4nguag3_m0d3l5_are_aw3s0me_4nd_s0_is_y0u}`.
+
+Finally solved this an hour before CTF ended!
 
 # Conclusion
 
-This challenge quite difficult mainly because none of us has any prior experience. The forensics part is straightforward, but it is kinda tricky with the `pkl` models and how we updated parameters in default `BERT` model. Probably would not have finished it without admin hints.
+This challenge quite difficult mainly because none of us has any prior experience in AI. The forensics part is straightforward, but it is kinda tricky with the `pkl` models and how we updated parameters in default `BERT` model. Probably would not have finished it without admin hints.
 
 It is a really nice challenge to learn about AI from reading documentations and trial-and-error. I would definitely recommend this challenge to anyone who wants to learn more about AI.
 
