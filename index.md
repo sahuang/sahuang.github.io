@@ -14,3 +14,5 @@ I am currently working as a Software Engineer at Microsoft, Vancouver. I play CT
 You can reach out to me via [Twitter](https://twitter.com/sahuang97), [LinkedIn](https://www.linkedin.com/in/xiaohai-xu-1a8884138/), or Discord (`sahuang#6271`).
 
 [osu!](https://osu.ppy.sh/u/sahuang) player and former beatmap nominator.
+
+Source code and solution of some CTF challenges that I created: [GitHub](https://github.com/sahuang/my-ctf-challenges).
