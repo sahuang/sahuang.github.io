@@ -1,10 +1,6 @@
 ---
-title: Insomni'hack teaser 2022 – Herald
-date: '2022-01-30'
-draft: false
-authors: ['sahuang']
-tags: ["Insomni'hack teaser 2022", 'Mobile', 'Reverse Engineering', 'Android', 'apk', 'rev', 'React Native']
-summary: 'Hermes Bytecode Reverse Engineering.'
+title: Reverse - Herald
+layout: default
 ---
 
 ## Herald

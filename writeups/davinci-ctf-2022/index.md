@@ -1,10 +1,6 @@
 ---
-title: DaVinci CTF 2022 – OSINT Compilation
-date: '2022-03-13'
-draft: false
-authors: ['sahuang']
-tags: ['DaVinci CTF 2022', 'OSINT']
-summary: 'Write-ups for all OSINT problems in DaVinci CTF 2022.'
+title: OSINT - Compilation
+layout: default
 ---
 
 <TOCInline toc={props.toc} asDisclosure />

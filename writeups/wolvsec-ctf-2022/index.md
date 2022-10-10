@@ -1,10 +1,6 @@
 ---
-title: WolvSec CTF – CPA-Secure Diffie–Hellman?
-date: '2022-03-26'
-draft: false
-authors: ['sahuang']
-tags: ['WolvSec CTF', 'Crypto', 'Diffie-Hellman', 'Prime', 'Mersenne', 'Factorization']
-summary: 'Small subgroup attack on Diffie-Hellman...?'
+title: Crypto - CPA-Secure Diffie-Hellman?
+layout: default
 ---
 
 ## CPA-Secure Diffie–Hellman?

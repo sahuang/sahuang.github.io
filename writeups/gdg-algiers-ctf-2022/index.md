@@ -3,7 +3,7 @@ title: Misc - MLM
 layout: default
 ---
 
-# Overview
+## Overview
 
 After an exciting weekend of SekaiCTF, our team played [GDG Algiers CTF 2022](https://ctftime.org/event/1745) and we won the first place. Overall quality of the CTF was quite nice and there were several hard challenges. I would like to make a writeup on one challenge, namely `MLM` in misc category. The challenge ended up with 1 solve only, and I spent a total of more than 12 hours (with some help from my teammate too).
 
@@ -13,7 +13,7 @@ Challenge description and solve status:
 
 ![Solves](./solves.png)
 
-# Forensics Analysis
+## Forensics Analysis
 
 The challenge is (sadly) about AI, which none of me and my team members have any prior experience with. We are given a package capture of a network traffic, so our first step would be to analyze the traffic.
 
@@ -57,7 +57,7 @@ do
 done
 ```
 
-# Dealing with layers
+## Dealing with layers
 
 After getting a bunch of files (`session_1.pkl` to `session_403.pkl`), we can use the following script to extract the data inside:
 
@@ -95,7 +95,7 @@ Playing around in CyberChef, I did not get anything even printable. I guess it w
 > - the username is your way to the model
 > - default config is being used
 
-# Dealing with layers (again)
+## Dealing with layers (again)
 
 After getting the hints, I figured out the answers to those 3 questions:
 
@@ -174,7 +174,7 @@ Thanks to `Copilot`, all the code except comments were automatically filled in. 
 
 ![Tensors](./tensor.png)
 
-# Get flag
+## Get flag
 
 Now the remaining step would be just to use the model to predict the flag. We can use `CyberErudites{[MASKED]}` as input, and the model will predict the masked part.
 
@@ -262,7 +262,7 @@ Output: `cybererudites{l4nguag3_m0d3l5_are_aw3s0me_4nd_s0_is_y0u}`.
 
 Finally solved this an hour before CTF ended!
 
-# Conclusion
+## Conclusion
 
 This challenge quite difficult mainly because none of us has any prior experience in AI. The forensics part is straightforward, but it is kinda tricky with the `pkl` models and how we updated parameters in default `BERT` model. Probably would not have finished it without admin hints.
 

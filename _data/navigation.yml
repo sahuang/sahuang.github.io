@@ -11,7 +11,7 @@
 - name: WolvSec CTF 2022
   link: /writeups/wolvsec-ctf-2022
   items:
-    - name: Crypto - CPA-Secure Diffie–Hellman?
+    - name: Crypto - CPA-Secure Diffie-Hellman?
 - name: RITSEC CTF 2022
   link: /writeups/ritsec-ctf-2022
   items:

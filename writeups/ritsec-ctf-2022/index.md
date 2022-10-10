@@ -1,10 +1,6 @@
 ---
-title: RITSEC CTF 2022 – Hamxor
-date: '2022-04-03'
-draft: false
-authors: ['sahuang']
-tags: ['RITSEC CTF 2022', 'Misc', 'XOR', 'Hamming Code']
-summary: 'Error correction with xor for the win.'
+title: Misc - Hamxor
+layout: default
 ---
 
 ## Hamxor
