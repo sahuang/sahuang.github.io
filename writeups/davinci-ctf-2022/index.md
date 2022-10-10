@@ -3,8 +3,6 @@ title: OSINT - Compilation
 layout: default
 ---
 
-<TOCInline toc={props.toc} asDisclosure />
-
 ## Monkeey
 
 > In what city is the statue of this monkey found? Wrap it around with the wrapper: `dvCTF{city_in_lowercase}`
