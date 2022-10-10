@@ -1,5 +1,21 @@
 - name: Home
   link: /
+- name: Insomni'hack teaser 2022
+  link: /writeups/insomnihack-teaser-2022
+  items:
+    - name: Reverse - Herald
+- name: DaVinci CTF 2022
+  link: /writeups/davinci-ctf-2022
+  items:
+    - name: OSINT - Compilation
+- name: WolvSec CTF 2022
+  link: /writeups/wolvsec-ctf-2022
+  items:
+    - name: Crypto - CPA-Secure Diffie–Hellman?
+- name: RITSEC CTF 2022
+  link: /writeups/ritsec-ctf-2022
+  items:
+    - name: Misc - Hamxor
 - name: LITCTF 2022
   link: /writeups/litctf-2022
   items:
