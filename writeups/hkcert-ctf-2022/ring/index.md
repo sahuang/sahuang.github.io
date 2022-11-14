@@ -58,7 +58,7 @@ v <- c(94.8823529411764923, -8.0697024752598967, -8.6432639293214333,
         4.0314998333763086,  5.1052914400636569,  1.8689828029874489, 13.7270919105349307, 
         12.8538529135203099,  7.1197700159123247, 10.2656771598556720)
 if(identical(u, v)){
-    print(sprintf("hkcert22{%s}", sprintf(p, "ReveRseengineeRing")))
+    print(sprintf("hkcert22{\%s}", sprintf(p, "ReveRseengineeRing")))
 }else{
     stop()
 }
