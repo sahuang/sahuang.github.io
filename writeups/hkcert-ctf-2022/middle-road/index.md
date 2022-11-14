@@ -21,9 +21,6 @@ As we can see, there are 3 main components in the APK, namely `ApiReflection`, `
 
 ### DecryptString
 
-<details>
-  <summary>Decompiled Code</summary>
-
 ```java
 package com.decryptstringmanager;
 
@@ -69,7 +66,6 @@ public class DecryptString {
     }
 }
 ```
-</details>
 
 As we can see in other classes, a lot of strings are using this class to encrypt some message. For example, 
 
@@ -79,7 +75,7 @@ String decryptString = DecryptString.decryptString("a893d80cd0758d5171606e42ae9a
 
 It is mainly used for obfuscation. We can easily run this piece of code locally and decrypt the hex strings everywhere. I created an online environment in case you want to give it a quick try: https://onecompiler.com/java/3ynnuqgx9
 
-For example, the above string will be decrypted to "Get Flag Failed. Did you try to do something bad?"
+For example, the above string will be decrypted to *Get Flag Failed. Did you try to do something bad?*
 
 In the following code snippets, I will add comments after the originally decompiled code, which replaced the encrypted strings with the decrypted ones.
 
@@ -114,87 +110,11 @@ public static Object obfuscate(int i, Object obj, Object[] objArr) {
 
 This is the core part of the challenge, it has two components, `GetFlag` class and `TOTP` class. Let's take a look at `GetFlag` first. 
 
-<details>
-  <summary>Decompiled Code</summary>
-
-```java
-public class GetFlag {
-    final String api_endpoint;
-    private OkHttpClient client;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ boolean lambda$new$0(String str, SSLSession sSLSession) {
-        return true;
-    }
-
-    public GetFlag() {
-        this.api_endpoint = DecryptString.decryptString("7efe907be1068bcdc7e75da1f1c429c118b54cc68881feba60765b4319a87a8f6f05bc7843e52cfcbe4d16fea02cbbad"); // https://middle-road.hkcert22.pwnable.hk:4433
-        try {
-            SSLContext sSLContext = SSLContext.getInstance(DecryptString.decryptString("cbe90efc10672828d48b803d8fd77bfa"));
-            TrustManager[] trustManagerArr = {new X509TrustManager() { // from class: com.example.getflag.GetFlag.1
-                @Override // javax.net.ssl.X509TrustManager
-                public void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) {
-                }
-
-                @Override // javax.net.ssl.X509TrustManager
-                public void checkServerTrusted(X509Certificate[] x509CertificateArr, String str) {
-                }
-
-                @Override // javax.net.ssl.X509TrustManager
-                public X509Certificate[] getAcceptedIssuers() {
-                    return new X509Certificate[0];
-                }
-            }};
-            sSLContext.init(null, trustManagerArr, new SecureRandom());
-            OkHttpClient.Builder builder = new OkHttpClient.Builder();
-            builder.sslSocketFactory(sSLContext.getSocketFactory(), (X509TrustManager) trustManagerArr[0]);
-            builder.hostnameVerifier(GetFlag$$ExternalSyntheticLambda0.INSTANCE);
-            this.client = builder.build();
-        } catch (KeyManagementException | NoSuchAlgorithmException unused) {
-            this.client = new OkHttpClient();
-        }
-    }
-
-    public String a() {
-        String decryptString = DecryptString.decryptString("a893d80cd0758d5171606e42ae9a31f40365b975416344148035306713f8309968e66e43815468f1a71ed16baf215a5ee7d86d4f4f1dec42018b3b12221dadbe"); // Get Flag Failed. Did you try to do something bad?
-        try {
-            Cipher c = c();
-            if (c == null) {
-                return decryptString;
-            }
-            KeyGenerator keyGenerator = KeyGenerator.getInstance(DecryptString.decryptString("d93ae28f05cdf2b62df968d6eb5c703f")); // AES
-            keyGenerator.init(256);
-            return DecryptString.decryptString("d94ab0db7162375b27f13e2ed68effa9") + new JSONObject(this.client.newCall(new Request.Builder().url(DecryptString.decryptString("7efe907be1068bcdc7e75da1f1c429c118b54cc68881feba60765b4319a87a8f33795e02224c5f1f1d88c4c0ecc526704c1704ee4feacb13b5ec040746cb8f57")).post(new FormBody.Builder().add(DecryptString.decryptString("b3b72508e5ccc7b60e767ca2a271b894"), Base64.encodeToString(c.doFinal(keyGenerator.generateKey().getEncoded()), 0)).add(DecryptString.decryptString("5d7e3867ee60307bdcb6253f71d8e32e"), b(10)).build()).build()).execute().body().string()).getString(DecryptString.decryptString("21e1b41d8b7c5e080042eece39d90929")) + DecryptString.decryptString("2dbead92490365397486171884a9873eb5487b0b8108f6c61b8bb3399ad4bbcbac71fea8382c202302022a11a8c6d2a6");
-        } catch (Exception unused) {
-            return decryptString;
-        }
-    }
-
-    private Cipher c() {
-        try {
-            JSONObject jSONObject = new JSONObject(this.client.newCall(new Request.Builder().url(DecryptString.decryptString("7efe907be1068bcdc7e75da1f1c429c118b54cc68881feba60765b4319a87a8f33795e02224c5f1f1d88c4c0ecc52670e2346e1f4fda55b27cfb48248faaaaa7")).post(new FormBody.Builder().add(DecryptString.decryptString("5d7e3867ee60307bdcb6253f71d8e32e"), b(0)).build()).build()).execute().body().string());
-            BigInteger bigInteger = new BigInteger(jSONObject.getString(DecryptString.decryptString("722faeb4aef1b7c7530d54bf999e8f31"))); // rsa_n
-            BigInteger bigInteger2 = new BigInteger(jSONObject.getString(DecryptString.decryptString("a6788be6a08fc808f7e1a3cf1b3069b5"))); // rsa_e
-            Cipher cipher = Cipher.getInstance(DecryptString.decryptString("3431cf29a4575a7b6138ce0ef882c256a996eae4103de6c78ff94057d5af7c3b")); // RSA/ECB/NoPadding
-            cipher.init(1, KeyFactory.getInstance(DecryptString.decryptString("e030aa380ea442b9e96fb2b0a33e2fa6")).generatePublic(new RSAPublicKeySpec(bigInteger, bigInteger2))); // RSA
-            return cipher;
-        } catch (Exception unused) {
-            return null;
-        }
-    }
-
-    private String b(int i) {
-        return (String) ApiReflection.obfuscate(0, null, new Object[]{DecryptString.decryptString("2114a9a1194fe2115a7e3a4d24782c35e16cb929353a82a2722a7a8055aca477355335516318a2278258858b6c93d2b62cca7006af40b8a3d4acc42d65a4edce01d8775cb26b372b59bdc69750370d1741efb3301d12e9a65b1a3615eda723b072d857cc6a475a569fec7c0c14d3ed23845ba1e88c68827c467dfe0da396c151d75dc9febaabc5d5348d49c79b790078"), Long.toHexString(((System.currentTimeMillis() / 1000) / 30) + i).toUpperCase(), DecryptString.decryptString("91df54507bc5f1c903d900b691cd5b91")});
-    }
-}
-```
-</details>
-
-1. `public GetFlag()`
+#### `public GetFlag()`
 
 The function essentially exposed an API endpoint `https://middle-road.hkcert22.pwnable.hk:4433` to us. There are some parts related to SSL Certificate but we don't really need to care about it.
 
-2. `private Cipher c()`
+#### `private Cipher c()`
 
 ```java
 private Cipher c() {
@@ -211,7 +131,7 @@ private Cipher c() {
 }
 ```
 
-Essentially, we will be sending a POST request to `https://middle-road.hkcert22.pwnable.hk:4433/getKey` with a parameter `code` which is the result of `b(0)`. Server will return `RSA` parameters $n$ and $e$ used for encryption/decryption. But what is `b(0)`?
+Essentially, we will be sending a POST request to `https://middle-road.hkcert22.pwnable.hk:4433/getKey` with a parameter `code` which is the result of `b(0)`. Server will return `RSA` parameters `n` and `e` used for encryption/decryption. But what is `b(0)`?
 
 ```java
 private String b(int i) {
@@ -222,7 +142,7 @@ private String b(int i) {
 
 Okay, so `ApiReflection.obfuscate` is called where parameters are `0`, `null`, and an object which I commented above. As mentioned before, this will be the first method added to `obfuscatedMethods`: `TOTP.class.getDeclaredMethod("generateTOTP512")`. We will get to `TOTP` class later.
 
-3. `public String a()`
+#### `public String a()`
 
 ```java
 public String a() {
@@ -247,7 +167,7 @@ This function is sending a POST request to `https://middle-road.hkcert22.pwnable
 
 What is `c.doFinal(keyGenerator.generateKey().getEncoded())`? We have an AES instance and a 256-bit key is generated with `generateKey()`. `doFinal` is to encrypt this 32-byte key with `RSA` public key. The result will be a 512-byte ciphertext.
 
-4. `generateTOTP512`
+#### `generateTOTP512`
 
 In the `TOTP` class, we can see the implementation of generating TOTP. Therefore, similar to `DecryptString`, we can copy it locally and run it with the parameters in `b()` to get the result.
 
@@ -271,7 +191,6 @@ ByteCompanionObject.MAX_VALUE = 127;
 Attached below is the working code I used to print out the values.
 
 ```java
-
 import java.lang.reflect.UndeclaredThrowableException;
 import java.math.BigInteger;
 import java.security.GeneralSecurityException;
@@ -283,7 +202,6 @@ import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
 import javax.crypto.KeyGenerator;
 
-
 public class Main {
     public static void main(String[] args) throws NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException {
         System.out.println(b(0));
@@ -294,7 +212,6 @@ public class Main {
 		byte[] tmp = instance.generateKey().getEncoded();
 		System.out.println(Base64.getEncoder().encodeToString(tmp));
         System.out.println(Base64.getEncoder().encodeToString(c.doFinal(tmp)));
-
     }
 
     /* renamed from: c */
@@ -317,7 +234,6 @@ public class Main {
     }
 
     public static String generateTOTP512(String str, String str2, String str3) {
-
         return generateTOTP(str, str2, str3, "HmacSHA512");
     }
 
@@ -341,6 +257,7 @@ public class Main {
         }
         return num;
     }
+    
     private static final int[] DIGITS_POWER = {1, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000};
 
     private static byte[] hexStr2Bytes(String str) {

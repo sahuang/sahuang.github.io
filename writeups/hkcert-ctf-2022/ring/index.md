@@ -48,7 +48,7 @@ y <- utf8ToInt(p)
 z <- lm(y ~ poly(x,16))
 ```
 
-The first two lines are straightforward. `x` is a vector of integers from 1 to 17, and `y` is the result of converting the password string to a vector of integers. The third line is the most interesting part. It fits a 16th order polynomial regression to the data. Basically, given 2 vectors `x` and `y`, we want to find coefficients $a_i$ of a polynomial function $f(x)$ such that $y = f(x)$ and the highest order of $f(x)$ is 16, i.e. $y = a_0 + a_1 * x^1 + a_2 * x^2 + ... + a_16 * x^16$. You could read this [StackOverflow answer](https://stackoverflow.com/questions/3822535/fitting-polynomial-model-to-data-in-r) for more details.
+The first two lines are straightforward. `x` is a vector of integers from 1 to 17, and `y` is the result of converting the password string to a vector of integers. The third line is the most interesting part. It fits a 16th order polynomial regression to the data. Basically, given 2 vectors `x` and `y`, we want to find coefficients `a_i` of a polynomial function `f(x)` such that `y = f(x)` and the highest order of `f(x)` is 16, i.e. `y = a_0 + a_1 * x^1 + a_2 * x^2 + ... + a_16 * x^16`. You could read this [StackOverflow answer](https://stackoverflow.com/questions/3822535/fitting-polynomial-model-to-data-in-r) for more details.
 
 ```r
 u <- as.numeric(summary(z)$coefficients[,1])
@@ -69,7 +69,7 @@ The rest part is simple, it checks if the coefficients of the fitted polynomial 
 The most tricky thing here is that `poly(x,16)` does not use "raw". It is orthogonal polynomial:
 
 > By default, with raw = FALSE, poly() computes an orthogonal polynomial. It internally sets up the model matrix with the raw coding x, x^2, x^3, ... first and then scales the columns so that each column is orthogonal to the previous ones. This does not change the fitted values but has the advantage that you can see whether a certain order in the polynomial significantly improves the regression over the lower orders.
->
+> 
 > Referenced from https://stackoverflow.com/questions/29999900/poly-in-lm-difference-between-raw-vs-orthogonal
 
 Therefore the coefficients are some weird decimals instead of nice integers. We can have a quick test:
@@ -93,7 +93,7 @@ Output:
 [1] -2  3  1  2
 ```
 
-I tried multiple ways to convert orthogonal to raw, one actually worked for small order polynomials, but somehow it did not work for this challenge. It is kinda frustrating and I almost thought I wouldn't be able to solve it. Luckily, my teammate `Utaha` noticed that `lm` is a linear system: for example, for the same `x`, result of $y = (0, 1, 1, 0)$ is the same as sum of $y = (0, 0, 1, 0)$ and $y = (0, 1, 0, 0)$.
+I tried multiple ways to convert orthogonal to raw, one actually worked for small order polynomials, but somehow it did not work for this challenge. It is kinda frustrating and I almost thought I wouldn't be able to solve it. Luckily, my teammate `Utaha` noticed that `lm` is a linear system: for example, for the same `x`, result of `y = (0, 1, 1, 0)` is the same as sum of `y = (0, 0, 1, 0)` and `y = (0, 1, 0, 0)`.
 
 ```r
 # y = 2x^3+x^2+3x-2

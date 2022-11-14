@@ -28,8 +28,5 @@
   link: /writeups/hkcert-ctf-2022
   items:
     - name: Reverse - Ring (150 points, 10 solves)
-      link: ring
     - name: Reverse - Pop Team Eric (100 points, 30 solves)
-      link: pop-team-eric
     - name: Reverse/Crypto - Middle Road (350 points, 8 solves)
-      link: middle-road
