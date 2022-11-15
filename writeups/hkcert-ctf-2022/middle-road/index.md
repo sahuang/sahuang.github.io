@@ -73,7 +73,7 @@ As we can see in other classes, a lot of strings are using this class to encrypt
 String decryptString = DecryptString.decryptString("a893d80cd0758d5171606e42ae9a31f40365b975416344148035306713f8309968e66e43815468f1a71ed16baf215a5ee7d86d4f4f1dec42018b3b12221dadbe");
 ```
 
-It is mainly used for obfuscation. We can easily run this piece of code locally and decrypt the hex strings everywhere. I created an online environment in case you want to give it a quick try: https://onecompiler.com/java/3ynnuqgx9
+It is mainly used for obfuscation. We can easily run this piece of code locally and decrypt the hex strings everywhere. I created an online environment in case you want to give it a quick try: [https://onecompiler.com/java/3ynnuqgx9](https://onecompiler.com/java/3ynnuqgx9)
 
 For example, the above string will be decrypted to *Get Flag Failed. Did you try to do something bad?*
 

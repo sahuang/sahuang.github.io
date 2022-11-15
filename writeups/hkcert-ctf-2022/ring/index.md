@@ -69,8 +69,8 @@ The rest part is simple, it checks if the coefficients of the fitted polynomial 
 The most tricky thing here is that `poly(x,16)` does not use "raw". It is orthogonal polynomial:
 
 > By default, with raw = FALSE, poly() computes an orthogonal polynomial. It internally sets up the model matrix with the raw coding x, x^2, x^3, ... first and then scales the columns so that each column is orthogonal to the previous ones. This does not change the fitted values but has the advantage that you can see whether a certain order in the polynomial significantly improves the regression over the lower orders.
-> 
-> Referenced from https://stackoverflow.com/questions/29999900/poly-in-lm-difference-between-raw-vs-orthogonal
+>  
+> (Referenced from https://stackoverflow.com/questions/29999900/poly-in-lm-difference-between-raw-vs-orthogonal)
 
 Therefore the coefficients are some weird decimals instead of nice integers. We can have a quick test:
 
