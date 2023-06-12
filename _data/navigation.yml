@@ -30,3 +30,7 @@
     - name: Reverse - Ring (150 points, 10 solves)
     - name: Reverse - Pop Team Eric (100 points, 30 solves)
     - name: Reverse/Crypto - Middle Road (350 points, 8 solves)
+- name: SEETF 2023
+  link: /writeups/seetf-2023
+  items:
+    - name: Writeup - Compilation

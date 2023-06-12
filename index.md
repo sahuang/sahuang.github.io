@@ -9,9 +9,9 @@ This website will contain writeups for challenges I solved in past CTFs. The sol
 
 # About Me
 
-I am currently working as a Software Engineer at Microsoft, Vancouver. I play CTFs as my main hobby outside work (besides gaming). Founder of [**Project Sekai CTF**](https://sekai.team/). I mainly do Cryptography and Reverse Engineering, occasionally Misc or Forensics.
+I am currently working as a Software Engineer at Microsoft, Vancouver. I play CTFs as my main hobby outside work (besides gaming). Founder of [**Project Sekai CTF**](https://sekai.team/). I mainly do Cryptography and Reverse Engineering, occasionally Misc and Programming.
 
-You can reach out to me via [Twitter](https://twitter.com/sahuang97), [LinkedIn](https://www.linkedin.com/in/xiaohai-xu-1a8884138/), or Discord (`sahuang#6271`).
+You can reach out to me via [Twitter](https://twitter.com/sahuang97), [LinkedIn](https://www.linkedin.com/in/xiaohai-xu-1a8884138/), or Discord (`sahuang`).
 
 [osu!](https://osu.ppy.sh/u/sahuang) player and former beatmap nominator.
 
