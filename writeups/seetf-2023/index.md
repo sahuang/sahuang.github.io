@@ -19,16 +19,16 @@ Below are the ones I solved or was one of the main solvers, and decided to write
 
 | Category   |         Name       | Solves |
 | ---------- | ------------------ | ------ |
-| Web | [🎓福](#web---🎓福-13-solves--487-points) | 13 |
+| Web | [🎓福](#web---fu-13-solves--487-points) | 13 |
 | Rev | [Data Structures and Algorithms](#rev---data-structures-and-algorithms-19-solves--481-points) | 19 |
 | Rev | [Linear Programming](#rev---linear-programming-1-solve--499-points) | 1 |
 | Crypto | [Qskates](#crypto---qskates-9-solves--491-points) | 9 |
 | Misc | [Android Zoo](#misc---android-zoo-33-solves--465-points) | 33 |
 | Misc | [Acrophobia](#misc---acrophobia-11-solves--489-points) | 11 |
 | Misc | [Joe](#misc---joe-8-solves--492-points) | 8 |
-| Misc | my-first-python-project | 4 |
+| Misc | [my-first-python-project](#misc---my-first-python-project-4-solves--496-points) | 4 |
 
-## Web - 🎓福 (13 solves / 487 points)
+## Web - Fu (13 solves / 487 points)
 
 ### Description
 
