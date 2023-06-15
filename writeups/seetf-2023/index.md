@@ -149,6 +149,10 @@ Content-Length: 8
 key=lego
 ```
 
+After the competition, I read [author's writeup](https://infosec.jaelkoh.com/ctfs/seetf-2023-fu) and came to know that the challenge idea was inspired by one of my tweets. What a coincidence!
+
+![Challenge inspired by me](fu.png)
+
 ## Rev - Data Structures and Algorithms (19 solves / 481 points)
 
 ### Description
@@ -324,7 +328,7 @@ It will only take around 5 minutes to print the resulting `Y`s. Decoding from bi
 
 Upon checking with author, apparently my solution was a "cheese" and author didn't know the tool. Using some other LP tool like `gurobi` will take more than 24 hours... I guess I was just lucky to have learned OR-Tools from SekaiCTF 2022.
 
-PS. Intended is something called "Constant Propagation" and we need to do some graph traversals to get the values. Not sure how to do it though :D
+PS. Intended is something called "Constant Propagation" and we need to do some graph traversals to get the values. [Here](https://juliapoo.github.io/ctf/2023/05/12/seetf2023-author-writeup.html#linear-programming) is the author writeup.
 
 ## Crypto - Qskates (9 solves / 491 points)
 
@@ -853,9 +857,9 @@ download_content("http://pypi.seeia.seetf.sg/static/js/warehouse.js", "content.j
 download_content("http://pypi.seeia.seetf.sg/api/v2/status.json", "manifest.json")
 ```
 
-They form a Chrome plugin, if we install it, it's actually a plugin that turn a page to black when launching (which will crash Chrome). As per admin, "Only seetf.sg domains are in scope", so that "https://rainbowpigeon.me" reference should also be irrelevant.
+They form a Chrome plugin, if we install it, it's actually a plugin that turn a page to black when launching (which will crash Chrome). As per admin, "Only `seetf.sg` domains are in scope": so `https://rainbowpigeon.me` reference should also be irrelevant.
 
-At this point I figured that http://pypi.seeia.seetf.sg/ is an interesting site, because apparently it's a pypi hosted by the author himself. What if flag is there? I clicked at all links, and browsed all files/code on this website, but nothing. We can view files on site in this way:
+At this point I figured that [http://pypi.seeia.seetf.sg](http://pypi.seeia.seetf.sg) is an interesting site, because apparently it's a pypi hosted by the author himself. What if flag is there? I clicked at all links, and browsed all files/code on this website, but nothing. We can view files on site in this way:
 
 ![View file on seeia.seetf.sg](https://media.discordapp.net/attachments/1116955194643714129/1116969822757072906/image.png)
 
@@ -865,7 +869,7 @@ Then the next day, BIG HINT DROPPED: "You might want to investigate the DNS reco
 
 ![DNS](dns.png)
 
-At this point, me and `Legoclones` spent hours OSINT the site and DNS records, nothing (?) was found. There are a lot of aliases and we thought they were irrelevant because domain not in scope.
+At this point, me and *Legoclones* spent hours OSINT the site and DNS records, nothing (?) was found. There are a lot of aliases and we thought they were irrelevant because domain not in scope.
 
 ![CNAME](cname.png)
 
@@ -879,8 +883,8 @@ Now, I spent some time reading the [doc of Storj on link sharing](https://docs.s
 
 ![Interesting post on Storj link sharing](https://cdn.discordapp.com/attachments/1116955194643714129/1117174111941173378/image.png)
 
-The random string seems to match the length of our `storj-access` key and we also have the `storj-root`! I tried this link: http://link.dcs1.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/src but unfortunately this doesn't work. Reading further, `Storj` seems to have changed url recently and https://link.us1.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/src/ actually works.
+The random string seems to match the length of our `storj-access` key and we also have the `storj-root`! I tried this link: [http://link.dcs1.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/src](http://link.dcs1.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/src) but unfortunately this doesn't work. Reading further, `Storj` seems to have changed url recently and [https://link.**us1**.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/src/](https://link.**us1**.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/src/) actually works.
 
-To find the actual flag, we go one directory back and can see flag is located at https://link.us1.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/flag.txt?wrap=1. Finally!
+To find the actual flag, we go one directory back and can see flag is located at [https://link.us1.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/flag.txt?wrap=1](https://link.us1.storjshare.io/s/jx4dw26pwrjp5rb6l2jn4a3nfy7a/site/flag.txt?wrap=1). Finally!
 
 `SEE{typ05qu4773d_p4ck4g3_n4m35_en4jal3z9mc0nh6nvbt548u0z47q9lso}`
