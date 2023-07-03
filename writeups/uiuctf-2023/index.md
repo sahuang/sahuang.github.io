@@ -6,6 +6,7 @@ layout: default
 ## Fast Calculator
 
 > Check out our new super fast calculator!
+>
 > (This challenge is sponsored by Battelle.)
 > 
 > [calc](./calc)
@@ -182,7 +183,7 @@ Cool. We are at a dead end now? There seems nothing to reverse now, and no way i
 
 ### Noticing missing bits
 
-The next day, we came to realize that something was ignored: we haven't checked the actual operations executed to produce `gauntlet` and thus decrypt the flag. We put up [an Excel sheet](https://docs.google.com/spreadsheets/d/1i4zFNFSymCqdqm3iP6v1s-1HaSOSc_3uA496m-TTdGA/edit#gid=0) to ducument the operations.
+The next day, we came to realize that something was ignored: we haven't checked the actual operations executed to produce `gauntlet` and thus decrypt the flag. We put up [an Excel sheet](https://docs.google.com/spreadsheets/d/1i4zFNFSymCqdqm3iP6v1s-1HaSOSc_3uA496m-TTdGA/edit#gid=0) to document the operations.
 
 ```
 314.23572239497753 % -343.80018153073945
@@ -300,7 +301,7 @@ console.log(final_res);
 
 Something different is yielded. If we apply this bit flip to original encrypted data, we get the flag using the same script before: `uiuctf{n0t_So_f45t_w1th_0bscur3_b1ts_of_MaThs}`.
 
-So, what was the issue? Checking the functions that got different bit flip, we notice there are a lot of `-0`s:
+So, what was the issue? Checking the functions that got different bit flip, we notice there are a lot of `-0`:
 
 ![Example operations](calc.png)
 
