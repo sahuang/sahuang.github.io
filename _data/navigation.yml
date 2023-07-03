@@ -34,3 +34,7 @@
   link: /writeups/seetf-2023
   items:
     - name: Writeup - Compilation
+- name: UIUCTF 2023
+  link: /writeups/uiuctf-2023
+  items:
+    - name: Reverse - Fast Calculator
