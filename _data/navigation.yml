@@ -38,3 +38,7 @@
   link: /writeups/uiuctf-2023
   items:
     - name: Reverse - Fast Calculator
+- name: UIUCTF 2024
+  link: /writeups/uiuctf-2024
+  items:
+    - name: Crypto - Key in a Haystack
