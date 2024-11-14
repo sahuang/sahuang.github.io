@@ -42,3 +42,7 @@
   link: /writeups/uiuctf-2024
   items:
     - name: Crypto - Key in a Haystack
+- name: ETH Escape 2024
+  link: /writeups/devcon-2024
+  items:
+    - name: Blockchain - Curve Validator Plus
