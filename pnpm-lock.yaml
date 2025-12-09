@@ -81,8 +81,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       overlayscrollbars:
-        specifier: ^2.12.0
-        version: 2.12.0
+        specifier: ^2.13.0
+        version: 2.13.0
       pagefind:
         specifier: ^1.4.0
         version: 1.4.0
@@ -3650,8 +3650,8 @@ packages:
     resolution: {integrity: sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==}
     hasBin: true
 
-  overlayscrollbars@2.12.0:
-    resolution: {integrity: sha512-mWJ5MOkcZ/ljHwfLw8+bN0V9ziGCoNoqULcp994j5DTGNQvnkWKWkA7rnO29Kyew5AoHxUnJ4Ndqfcl0HSQjXg==}
+  overlayscrollbars@2.13.0:
+    resolution: {integrity: sha512-uQGpLESrbFDLTWucWAKX9ceIANj7detMwH/2yJ315Llt72ZcWN3P6ckMotoqVv2Mk29R/pnhDtgYjy4K+kwAyQ==}
 
   own-keys@1.0.1:
     resolution: {integrity: sha512-qFOyK5PjiWZd+QQIh+1jhdb9LpxTF0qs7Pm8o5QHYZ0M3vKqSqzsZaEB6oWlxZ+q2sJBMI/Ktgd2N5ZwQoRHfg==}
@@ -4493,6 +4493,7 @@ packages:
   sitemap@8.0.0:
     resolution: {integrity: sha512-+AbdxhM9kJsHtruUF39bwS/B0Fytw6Fr1o4ZAIAEqA6cke2xcoO2GleBw9Zw7nRzILVEgz7zBM5GiTJjie1G9A==}
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    deprecated: 'SECURITY: Multiple vulnerabilities fixed in 8.0.1 (XML injection, path traversal, command injection, protocol injection). Upgrade immediately: npm install sitemap@8.0.1'
     hasBin: true
 
   slash@3.0.0:
@@ -9414,7 +9415,7 @@ snapshots:
 
   opencollective-postinstall@2.0.3: {}
 
-  overlayscrollbars@2.12.0: {}
+  overlayscrollbars@2.13.0: {}
 
   own-keys@1.0.1:
     dependencies:
