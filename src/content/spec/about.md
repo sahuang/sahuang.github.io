@@ -1,4 +1,4 @@
-# About
+# About Me
 
 I’m currently a Web3 Security Researcher at [**OtterSec**](https://osec.io). Before that, I worked as a software engineer at Microsoft Vancouver. I play CTFs as my main hobby and founded [**Project Sekai CTF**](https://sekai.team/), a top-tier international team.
 
