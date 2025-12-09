@@ -1,5 +1,5 @@
-# CTF Writeups
+# Boku no Sekai
 
-Website for my CTF Writeups.
+My personal website for projects and blogging.
 
 https://sahua.ng/
