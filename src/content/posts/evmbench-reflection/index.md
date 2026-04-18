@@ -1,5 +1,5 @@
 ---
-title: EVMbench—Evaluating an Audit Agent on Live Ethereum Protocols
+title: 'EVMbench: Evaluating an Audit Agent on Live Ethereum Protocols'
 published: 2026-04-17
 description: 'Post-reflection of EVMbench from January 2026.'
 tags: [Blockchain, Ethereum, EVM, Smart Contracts, Auditing, Security]
