@@ -329,3 +329,5 @@ Several extensions are natural follow-ups:
 We are releasing the TxRCA-Bench benchmark data publicly — the 70 annotated exploit transactions with ground-truth root cause labels, the per-case workspaces (raw traces, event logs, contracts, ABIs, Solidity sources), all 490 raw agent outputs with both judges' scores, and the JSON output schema. Anyone should be able to re-score outputs, test their own agent against the same evidence, or extend the benchmark with new cases.
 
 The agent runtime and scoring harness code is not being released at this time. However, because the underlying on-chain data is immutable and the benchmark is defined purely in terms of `(transaction_hash, chain_id)` plus a ground-truth label, the benchmark is trivially reproducible against any new agent: given the inputs, any agent can be run in any runtime, and its output scored against the same rubric.
+
+::github{repo="sahuang/txrca-bench"}
